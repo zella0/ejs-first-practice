@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style media="screen">
+    /* body {
+      text-align: center;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <% for(var i = 0; i < classes.length; i++){ %>
+        <div class="col-md-4" style="margin-top: 3rem">
+          <h3>Edit class</h3>
+          <form action="/update/<%=classes[i].id%>" method="post">
+            <label for="class_name">class_name</label>
+            <input type="text" name="class_name" placeholder="Class Name" value="<%= classes[i].class_name %>">
+
+            <label for="class_location">class_location</label>
+            <input type="text" name="class_location" placeholder="Class Location" value="<%= classes[i].class_location %>">
+
+            <label for="class_size">class_size</label>
+            <input type="number" name="class_size" placeholder="Class Size" value="<%= classes[i].class_size %>">
+
+            <label for="class_duration">class_duration</label>
+            <input type="number" name="class_duration" placeholder="Class Duration" value="<%= classes[i].class_duration %>">
+
+            <input type="submit">
+          </form>
+        </div>
+        <% } %>
+    </div>
+  </div>
+</body>
+
+</html>

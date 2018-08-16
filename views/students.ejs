@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style media="screen">
+    body{
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2><%= classes.class_name%></h2>
+    <p>
+      Location: <%= classes.class_location%>
+      <br>
+      Class Duration: <%= classes.class_duration%> months
+    </p>
+    <h1>Total Students: <%=classes.students.length%></h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Student's name</h3>
+      </div>
+      <div class="col-md-4">
+      <h3>  Student's age</h3>
+      </div>
+      <div class="col-md-4">
+        <h3>Student's email</h3>
+      </div>
+    </div>
+      <% for(let i = 0; i < classes.students.length; i++) {%>
+        <div class="row">
+          <div class="col-md-4">
+            <%= classes.students[i].student_name %>
+          </div>
+          <div class="col-md-4">
+            <%= classes.students[i].student_age %>
+          </div>
+          <div class="col-md-4">
+            <%= classes.students[i].student_email %>
+          </div>
+        </div>
+        <% } %>
+  </div>
+</body>
+</html>

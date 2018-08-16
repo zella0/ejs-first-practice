@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style media="screen">
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Add a new class</h3>
+    <form action="/createClass" method="post">
+      <input type="text" name="class_name" placeholder="Class Name">
+      <input type="text" name="class_location" placeholder="Class Location">
+      <input type="number" name="class_size" placeholder="Class Size">
+      <input type="number" name="class_duration" placeholder="Class Duration">
+      <input type="submit">
+    </form>
+    <div class="row">
+      <% for(var i = 0; i < classes.length; i++){ %>
+        <div class="col-md-4" style="margin-top: 3rem">
+          <h2><a href="/<%=classes[i].id%>"> <%= classes[i].class_name%></a></h2>
+          <p>
+            <span>Location: </span>
+            <%= classes[i].class_location%>
+              <br>
+              <span>Class Size: </span>
+              <%= classes[i].class_size%>
+                <br>
+                <span>Class Duration: </span>
+                <%= classes[i].class_duration%> months
+          </p>
+          <a href="/update/<%=classes[i].id%>"><button type="button" name="button">Edit</button></a>
+          <a href="/delete/<%=classes[i].id%>"><button type="button" name="button">Delete</button></a>
+        </div>
+        <% } %>
+    </div>
+  </div>
+</body>
+
+</html>
